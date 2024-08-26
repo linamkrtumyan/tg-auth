@@ -16,3 +16,8 @@ button.tgme_widget_login_button {
     width: 400px;
     height: 40px;
 }
+
+#widget_login button {
+    background-color: green;
+
+}
