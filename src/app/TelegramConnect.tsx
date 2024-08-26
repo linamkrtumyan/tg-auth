@@ -102,7 +102,9 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
   useEffect(() => {
     if (typeof document !== 'undefined') {
       const loginWidget = document.getElementById('widget_login');
+      console.log("object")
       if (loginWidget) {
+        console.log(loginWidget,'loginWidget')
         loginWidget.style.backgroundColor = "blue";
         loginWidget.style.fontSize = "20px";
       }
@@ -118,7 +120,7 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
       {...wrapperProps}
     />
 
-    <div className="teststyle">test7</div>
+    <div className="teststyle">test8</div>
 
 </>
 
