@@ -100,11 +100,17 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
   ]);
 
   return (
+    <>
     <div
       ref={ref}
       className={className}
       {...wrapperProps}
     />
+
+    <div className="teststyle">test</div>
+
+</>
+
   );
 };
 

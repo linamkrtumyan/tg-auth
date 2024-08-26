@@ -9,3 +9,10 @@ button.tgme_widget_login_button {
 .tgme_widget_login.large button.tgme_widget_login_button {
     background-color: blue;
 }
+
+.teststyle {
+    color: aquamarine;
+    background-color: fuchsia;
+    width: 400px;
+    height: 40px;
+}
