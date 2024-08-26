@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { TelegramConnect } from "./TelegramConnect";
 
 export default function Home() {
-  let name = "ex_test_bot"; // Это имя бота который вы ранее создавали в BotFather
+  let name = "exlina_test_bot"; // Это имя бота который вы ранее создавали в BotFather
   const handleBot = (user: any) => {
     console.log(user);
   };
