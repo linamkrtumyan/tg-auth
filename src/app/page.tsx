@@ -16,7 +16,7 @@ export default function Home() {
         cornerRadius={3} // 0 - 20
         usePic={false} // true | false
         dataOnauth={handleBot}
-        className="telegramBtn"
+        className={styles.telegramBtn}
       />
     </main>
   );
