@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import "./styles.css"
 
 export interface TelegramUser {
   id: number;
