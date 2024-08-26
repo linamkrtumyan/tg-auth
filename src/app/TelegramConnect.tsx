@@ -55,7 +55,7 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
     script.setAttribute("data-size", buttonSize);
 
     if (cornerRadius !== undefined) {
-      script.setAttribute("data-radius", cornerRadius.toString());
+      script.setAttribute("data-radius", "14");
     }
 
     if (requestAccess) {

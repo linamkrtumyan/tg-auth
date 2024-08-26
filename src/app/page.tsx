@@ -13,10 +13,11 @@ export default function Home() {
       <TelegramConnect
         botName={name}
         buttonSize="large" // "large" | "medium" | "small"
-        cornerRadius={3} // 0 - 20
+        cornerRadius={14} // 0 - 20
         usePic={false} // true | false
         dataOnauth={handleBot}
         className={styles.telegramBtn}
+        
       />
     </main>
   );
