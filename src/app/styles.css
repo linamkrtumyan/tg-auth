@@ -1,3 +1,11 @@
 .tgme_widget_login_button {
     background-color: green;
 }
+
+button.tgme_widget_login_button {
+    background-color: blueviolet;
+}
+
+.tgme_widget_login.large button.tgme_widget_login_button {
+    background-color: blue;
+}
