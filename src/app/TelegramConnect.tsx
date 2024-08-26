@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import "./styles.css"
+import "./styles.css";
 
 export interface TelegramUser {
   id: number;
@@ -9,18 +9,6 @@ export interface TelegramUser {
   auth_date: number;
   hash: string;
 }
-
-// interface Props {
-//   botName: string;
-//   usePic?: boolean;
-//   className?: string;
-//   cornerRadius?: number;
-//   requestAccess?: boolean;
-//   dataAuthUrl?: string;
-//   dataOnauth?: (user: TelegramUser) => void;
-//   buttonSize?: "large" | "medium" | "small";
-//   wrapperProps?: React.HTMLProps<HTMLDivElement>;
-// }
 
 declare global {
   interface Window {
@@ -51,7 +39,7 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
       typeof dataAuthUrl === "undefined"
     ) {
       throw new Error(
-        "One of this props should be defined: dataAuthUrl (redirect URL), dataOnauth (callback fn) should be defined."
+        "One of these props should be defined: dataAuthUrl (redirect URL), dataOnauth (callback fn)."
       );
     }
 
@@ -87,7 +75,20 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
 
     script.async = true;
 
+    // Injecting the script into the iframe context
+    const frameScript = document.createElement("script");
+    frameScript.innerHTML = `
+      document.addEventListener("DOMContentLoaded", function() {
+        const loginWidget = document.getElementById('widget_login');
+        if (loginWidget) {
+          loginWidget.style.backgroundColor = "blue";
+          loginWidget.style.fontSize = "20px";
+        }
+      });
+    `;
+    
     ref.current.appendChild(script);
+    ref.current.appendChild(frameScript);
   }, [
     botName,
     buttonSize,
@@ -99,31 +100,8 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
     dataAuthUrl,
   ]);
 
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      const loginWidget = document.getElementById('widget_login');
-      console.log(loginWidget,"object")
-      if (loginWidget) {
-        console.log(loginWidget,'loginWidget')
-        loginWidget.style.backgroundColor = "blue";
-        loginWidget.style.fontSize = "20px";
-      }
-    }
-  }, [ref]);
-  
-
   return (
-    <>
-    <div
-      ref={ref}
-      className={className}
-      {...wrapperProps}
-    />
-
-    <div className="teststyle">test9</div>
-
-</>
-
+    <div ref={ref} className={className} {...wrapperProps} />
   );
 };
 
@@ -138,4 +116,3 @@ interface TelegramLoginButtonType {
   dataAuthUrl?: string;
   buttonSize: "large" | "medium" | "small";
 }
-
