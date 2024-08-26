@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { TelegramConnect } from "./TelegramConnect";
@@ -16,6 +16,7 @@ export default function Home() {
         cornerRadius={3} // 0 - 20
         usePic={false} // true | false
         dataOnauth={handleBot}
+        className="telegramBtn"
       />
     </main>
   );
