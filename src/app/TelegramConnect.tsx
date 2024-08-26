@@ -99,12 +99,15 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
     dataAuthUrl,
   ]);
 
-  const loginWidget = document.getElementById('widget_login');
-  console.log(loginWidget,'loginWidget')
-  if (loginWidget) {
-    loginWidget.style.backgroundColor = "pink";
-    loginWidget.style.fontSize = "20px";
-  }
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const loginWidget = document.getElementById('widget_login');
+      if (loginWidget) {
+        loginWidget.style.backgroundColor = "blue";
+        loginWidget.style.fontSize = "20px";
+      }
+    }
+  }, []);
   
 
   return (
@@ -115,7 +118,7 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
       {...wrapperProps}
     />
 
-    <div className="teststyle">test</div>
+    <div className="teststyle">test7</div>
 
 </>
 
