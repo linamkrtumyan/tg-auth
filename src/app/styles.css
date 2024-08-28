@@ -1,23 +1,29 @@
-.tgme_widget_login_button {
-    background-color: green;
+.tg-login-button {
+  opacity: 0;
+  margin-top: -32px;
+  width: 100%;
+}
+.mainclass {
+  z-index: 1000;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-button.tgme_widget_login_button {
-    background-color: blueviolet;
+.tg-logo1 {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  border-width: 1px;
+  border-color: #09090a;
+  border-radius: 4px;
+  height: 32px;
+  background-color: #09090a;
 }
 
-.tgme_widget_login.large button.tgme_widget_login_button {
-    background-color: blue;
-}
-
-.teststyle {
-    color: aquamarine;
-    background-color: fuchsia;
-    width: 400px;
-    height: 40px;
-}
-
-#widget_login button {
-    background-color: green;
-
+body {
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
