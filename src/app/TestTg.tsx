@@ -52,6 +52,17 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
 
 function largeFunction(){
     console.log('test largeFunction')
+ 
+
+      if (typeof window !== 'undefined') {
+        const element = window.document.getElementsByTagName("button")
+        console.log(element,'element')
+//   if (elmnt) {
+//     elmnt.style.backgroundColor = "red";
+//   }
+  } else {
+    console.log('Window is undefined');
+  }
     // This is a global function and is a part of window object.
     // This can be called from anywhere once the file is loaded.
   }
@@ -127,7 +138,7 @@ if (typeof largeFunction === 'function') {
                 
               }}
             >
-              Connect via Telegram 1
+              Connect via Telegram 1wwww
             </p>
           </div>
         ) : (
