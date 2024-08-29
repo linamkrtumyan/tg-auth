@@ -28,6 +28,18 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
   const [loader, setLoader] = useState(false);
   const instance = useRef<HTMLDivElement | null>(null);
 
+  console.log("test")
+
+
+  const iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
+  console.log(iframe,'iframe')
+  const elmnt = iframe?.contentWindow?.document.getElementsByTagName("button")[0];
+  console.log(elmnt,'elmnt')
+  if (elmnt) {
+    elmnt.style.backgroundColor = "red";
+  }
+  
+
   useEffect(() => {
     if (instance.current) {
       (window as any).TelegramLoginWidget = {

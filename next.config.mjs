@@ -3,10 +3,10 @@ const nextConfig = {
     images: {
       remotePatterns: [
         {
-          protocol: "https",
-          hostname: "**", // Allows images from any hostname
-          pathname: "**", // Allows any path on the hostname
-        },
+            protocol: "https",
+            hostname: "i.imgur.com",
+            port: "",
+          },
       ],
     },
   };
