@@ -36,11 +36,11 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
 
   const iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
   console.log(iframe,'iframe')
-//   const elmnt = iframe?.contentWindow?.document.getElementsByTagName("button")[0];
-//   console.log(elmnt,'elmnt')
-//   if (elmnt) {
-//     elmnt.style.display = "none";
-//   }
+  const elmnt = iframe?.contentWindow?.document.getElementsByTagName("button")[0];
+  console.log(elmnt,'elmnt')
+  if (elmnt) {
+    elmnt.style.backgroundColor = "red";
+  }
   
   useEffect(() => {
     if (ref.current === null) return;
