@@ -81,9 +81,10 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
                 color: "white",
                 textAlign: "center",
                 fontWeight: "bold",
+                
               }}
             >
-              Telegram
+              Connect via Telegram
             </p>
           </div>
         ) : (
