@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef, useEffect, useState } from "react";
 import "./styles.css";
 
@@ -28,41 +28,38 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
   const [loader, setLoader] = useState(false);
   const instance = useRef<HTMLDivElement | null>(null);
 
-  console.log("test")
+  console.log("test");
 
+  //   if (typeof window !== 'undefined') {
+  //     const iframe = window.document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
+  //     console.log(iframe, 'iframe');
+  //       const elmnt = iframe.conte
+  //   console.log(elmnt,'elmnt')
+  // //   if (elmnt) {
+  // //     elmnt.style.backgroundColor = "red";
+  // //   }
+  //   } else {
+  //     console.log('Window is undefined');
+  //   }
 
-//   if (typeof window !== 'undefined') {
-//     const iframe = window.document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
-//     console.log(iframe, 'iframe');
-//       const elmnt = iframe.conte
-//   console.log(elmnt,'elmnt')
-// //   if (elmnt) {
-// //     elmnt.style.backgroundColor = "red";
-// //   }
-//   } else {
-//     console.log('Window is undefined');
-//   }
-  
-//   const elmnt = iframe?.getElementsByTagName('button')
-//   console.log(elmnt,'elmnt')
-//   if (elmnt) {
-//     elmnt.style.backgroundColor = "red";
-//   }
-  
+  //   const elmnt = iframe?.getElementsByTagName('button')
+  //   console.log(elmnt,'elmnt')
+  //   if (elmnt) {
+  //     elmnt.style.backgroundColor = "red";
+  //   }
 
-function largeFunction(){
-    console.log('test largeFunction')
- 
+  function largeFunction() {
+    console.log("test largeFunction");
 
-      if (typeof window !== 'undefined') {
-        const element = window.document.getElementsByTagName("button")
-        console.log(element,'element')
-//   if (elmnt) {
-//     elmnt.style.backgroundColor = "red";
-//   }
-  } else {
-    console.log('Window is undefined');
-  }
+    if (typeof window !== "undefined") {
+      const element = window.document.getElementsByTagName("button");
+      console.log(element, "element");
+      //   if (elmnt) {
+      //     elmnt.style.backgroundColor = "red";
+      //   }
+    } else {
+      console.log("Window is undefined");
+    }
     // This is a global function and is a part of window object.
     // This can be called from anywhere once the file is loaded.
   }
@@ -86,21 +83,14 @@ function largeFunction(){
       script.setAttribute("data-request-access", requestAccess);
       script.setAttribute("data-userpic", usePic ? "true" : "false");
       script.setAttribute("data-lang", lang);
-    //   script.crossOrigin = 'anonymous';
+      //   script.crossOrigin = 'anonymous';
 
-    // script.src = "largeFunction"
+      // script.src = "largeFunction"
 
-    document.body.appendChild(script);
+      document.body.appendChild(script);
 
-// Optionally, you can add an onload handler to execute `largeFunction` once the script has loaded
-script.onload = () => {
-if (typeof largeFunction === 'function') {
-  largeFunction();
-} else {
-  console.log('largeFunction is not defined');
-}
-};
-
+      // Optionally, you can add an onload handler to execute `largeFunction` once the script has loaded
+ 
 
       if (dataAuthUrl) {
         script.setAttribute("data-auth-url", dataAuthUrl);
@@ -113,11 +103,29 @@ if (typeof largeFunction === 'function') {
       script.async = true;
 
       instance.current.appendChild(script);
+
+
       setTimeout(() => {
+        script.onload = () => {
+            if (typeof largeFunction === "function") {
+              largeFunction();
+            } else {
+              console.log("largeFunction is not defined");
+            }
+          };
         setLoader(true);
       }, 1000);
     }
-  }, [botName, buttonSize, cornerRadius, requestAccess, usePic, dataAuthUrl, lang, dataOnauth]);
+  }, [
+    botName,
+    buttonSize,
+    cornerRadius,
+    requestAccess,
+    usePic,
+    dataAuthUrl,
+    lang,
+    dataOnauth,
+  ]);
 
   return (
     <div className="mainclass">
@@ -135,7 +143,6 @@ if (typeof largeFunction === 'function') {
                 color: "white",
                 textAlign: "center",
                 fontWeight: "bold",
-                
               }}
             >
               Connect via Telegram 1wwww
