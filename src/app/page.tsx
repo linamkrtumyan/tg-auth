@@ -22,6 +22,14 @@ export default function Home() {
       /> */}
 
       <BotButton/>
+
+      <Image
+            src="https://i.imgur.com/jzU4oUo.jpeg"
+            width={400}
+            height={400}
+            alt="avatar"
+            style={{ borderRadius: "50%" }}
+          />
     </main>
   );
 }
