@@ -84,7 +84,7 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
                 
               }}
             >
-              Connect via Telegram
+              Connect via Telegram 1
             </p>
           </div>
         ) : (
