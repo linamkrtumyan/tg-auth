@@ -31,17 +31,22 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
   console.log("test")
 
 
-  if (typeof window !== 'undefined') {
-    const iframe = window.document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
-    console.log(iframe, 'iframe');
-      const elmnt = iframe?.getElementsByTagName('button')
-  console.log(elmnt,'elmnt')
-//   if (elmnt) {
-//     elmnt.style.backgroundColor = "red";
-//   }
-  } else {
-    console.log('Window is undefined');
-  }
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+        const iframes = window.document.getElementsByClassName("tgme_widget_login_button") as HTMLCollectionOf<HTMLIFrameElement>;
+        console.log(iframes, 'iframe');
+    //       const elmnt = iframe?.getElementsByTagName('button')
+    //   console.log(elmnt,'elmnt')
+    //   if (elmnt) {
+    //     elmnt.style.backgroundColor = "red";
+    //   }
+      } else {
+        console.log('Window is undefined');
+      }
+  },[loader])
+
+
+
   
 //   const elmnt = iframe?.getElementsByTagName('button')
 //   console.log(elmnt,'elmnt')
