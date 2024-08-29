@@ -52,8 +52,15 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
     console.log("test largeFunction");
 
     if (typeof window !== "undefined") {
-      const element = window.document.getElementsByTagName("button");
+      const element = window.document.getElementsByTagName("iframe");
+      var iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
+    //   const el = iframe?.contentWindow?.document
+        const elmnt = iframe?.contentWindow?.document.getElementsByTagName("button")[0];
+
+      console.log(elmnt,'elmnt')
+
       console.log(element, "element");
+      console.log(iframe,'iframe')
       //   if (elmnt) {
       //     elmnt.style.backgroundColor = "red";
       //   }
@@ -101,18 +108,21 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
         );
       }
       script.async = true;
+      script.onload = () => {
+        if (typeof largeFunction === "function") {
+          largeFunction();
+        } else {
+          console.log("largeFunction is not defined");
+        }
+      };
 
       instance.current.appendChild(script);
 
+  
+
 
       setTimeout(() => {
-        script.onload = () => {
-            if (typeof largeFunction === "function") {
-              largeFunction();
-            } else {
-              console.log("largeFunction is not defined");
-            }
-          };
+      
         setLoader(true);
       }, 1000);
     }
