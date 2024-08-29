@@ -31,10 +31,20 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
   console.log("test")
 
 
-  const iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
-  console.log(iframe,'iframe')
-  const elmnt = iframe?.getElementsByTagName('button')
+  if (typeof window !== 'undefined') {
+    const iframe = window.document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
+    console.log(iframe, 'iframe');
+      const elmnt = iframe?.getElementsByTagName('button')
   console.log(elmnt,'elmnt')
+//   if (elmnt) {
+//     elmnt.style.backgroundColor = "red";
+//   }
+  } else {
+    console.log('Window is undefined');
+  }
+  
+//   const elmnt = iframe?.getElementsByTagName('button')
+//   console.log(elmnt,'elmnt')
 //   if (elmnt) {
 //     elmnt.style.backgroundColor = "red";
 //   }

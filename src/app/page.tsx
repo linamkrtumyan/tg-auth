@@ -30,9 +30,6 @@ export default function Home() {
             alt="avatar"
             style={{ borderRadius: "50%" }}
           />
-
-
-          11
     </main>
   );
 }
