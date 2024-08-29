@@ -77,7 +77,7 @@ function largeFunction(){
       script.setAttribute("data-lang", lang);
     //   script.crossOrigin = 'anonymous';
 
-    script.src = "largeFunction"
+    // script.src = "largeFunction"
 
     document.body.appendChild(script);
 
