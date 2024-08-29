@@ -31,22 +31,17 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
   console.log("test")
 
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-        const iframes = window.document.getElementsByClassName("tgme_widget_login_button") as HTMLCollectionOf<HTMLIFrameElement>;
-        console.log(iframes, 'iframe');
-    //       const elmnt = iframe?.getElementsByTagName('button')
-    //   console.log(elmnt,'elmnt')
-    //   if (elmnt) {
-    //     elmnt.style.backgroundColor = "red";
-    //   }
-      } else {
-        console.log('Window is undefined');
-      }
-  },[loader])
-
-
-
+//   if (typeof window !== 'undefined') {
+//     const iframe = window.document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
+//     console.log(iframe, 'iframe');
+//       const elmnt = iframe.conte
+//   console.log(elmnt,'elmnt')
+// //   if (elmnt) {
+// //     elmnt.style.backgroundColor = "red";
+// //   }
+//   } else {
+//     console.log('Window is undefined');
+//   }
   
 //   const elmnt = iframe?.getElementsByTagName('button')
 //   console.log(elmnt,'elmnt')
@@ -54,6 +49,12 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
 //     elmnt.style.backgroundColor = "red";
 //   }
   
+
+function largeFunction(){
+    console.log('test largeFunction')
+    // This is a global function and is a part of window object.
+    // This can be called from anywhere once the file is loaded.
+  }
 
   useEffect(() => {
     if (instance.current) {
@@ -74,6 +75,21 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
       script.setAttribute("data-request-access", requestAccess);
       script.setAttribute("data-userpic", usePic ? "true" : "false");
       script.setAttribute("data-lang", lang);
+    //   script.crossOrigin = 'anonymous';
+
+    script.src = "largeFunction"
+
+    document.body.appendChild(script);
+
+// Optionally, you can add an onload handler to execute `largeFunction` once the script has loaded
+script.onload = () => {
+if (typeof largeFunction === 'function') {
+  largeFunction();
+} else {
+  console.log('largeFunction is not defined');
+}
+};
+
 
       if (dataAuthUrl) {
         script.setAttribute("data-auth-url", dataAuthUrl);
