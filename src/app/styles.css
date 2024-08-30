@@ -6,7 +6,7 @@
 
 .tg-login-button > * {
     position: absolute;
-    width: 100% !important;
+    width: 700px !important;
   }
 .mainclass {
   z-index: 1000;
