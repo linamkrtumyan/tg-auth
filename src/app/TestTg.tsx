@@ -51,20 +51,39 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
   function largeFunction() {
     // console.log("test largeFunction");
 
+    setTimeout(() => {
+
+
+    if (typeof window !== "undefined") {
+          var iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
+          console.log(iframe,'iframe')
+          var doc = iframe?.contentDocument?.documentElement
+          console.log(doc,"doc")
+          // reference to form named 'demoForm' in iframe
+          var button = doc?.getElementsByTagName('button');
+            // var elmnt = iframe?.
+          console.log(button,'button')
+        } else {
+          console.log("Window is undefined");
+        }
+
+    }, 2000)
+
     if (typeof window !== "undefined") {
     //   const element = window.document.getElementsByTagName("iframe");
       var iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
     //   const el = iframe?.contentWindow?.document
         // const elmnt = iframe?.contentWindow?.document
+    //   console.log(iframe,'iframe')
 
-        var elmnt = iframe?.contentWindow?.document.getElementsByClassName("tgme_widget_login_button")
+        var elmnt = iframe?.contentWindow?.document.getElementsByTagName("html")
         
         // elmnt.style.display = "none";
 
-      console.log(elmnt,'elmnt')
+    //   console.log(elmnt,'elmnt')
+
 
     //   console.log(element, "element");
-      console.log(iframe,'iframe')
       //   if (elmnt) {
       //     elmnt.style.backgroundColor = "red";
       //   }
@@ -132,10 +151,10 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
   
 
 
-    //   setTimeout(() => {
-      
-    //     setLoader(true);
-    //   }, 1000);
+      setTimeout(() => {
+        setLoader(true);
+    
+      }, 1000);
     }
   }, [
     botName,
