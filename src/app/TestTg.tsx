@@ -49,17 +49,21 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
   //   }
 
   function largeFunction() {
-    console.log("test largeFunction");
+    // console.log("test largeFunction");
 
     if (typeof window !== "undefined") {
-      const element = window.document.getElementsByTagName("iframe");
+    //   const element = window.document.getElementsByTagName("iframe");
       var iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
     //   const el = iframe?.contentWindow?.document
-        const elmnt = iframe?.contentWindow?.document.getElementsByTagName("body")[0];
+        // const elmnt = iframe?.contentWindow?.document
+
+        var elmnt = iframe?.contentWindow?.document.getElementsByClassName("tgme_widget_login_button")
+        
+        // elmnt.style.display = "none";
 
       console.log(elmnt,'elmnt')
 
-      console.log(element, "element");
+    //   console.log(element, "element");
       console.log(iframe,'iframe')
       //   if (elmnt) {
       //     elmnt.style.backgroundColor = "red";
@@ -92,22 +96,6 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
       script.setAttribute("data-lang", lang);
       //   script.crossOrigin = 'anonymous';
 
-      // script.src = "largeFunction"
-
-      document.body.appendChild(script);
-
-      // Optionally, you can add an onload handler to execute `largeFunction` once the script has loaded
- 
-
-      if (dataAuthUrl) {
-        script.setAttribute("data-auth-url", dataAuthUrl);
-      } else {
-        script.setAttribute(
-          "data-onauth",
-          "TelegramLoginWidget.dataOnauth(user)"
-        );
-      }
-      script.async = true;
       script.onload = () => {
         if (typeof largeFunction === "function") {
           largeFunction();
@@ -115,16 +103,39 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
           console.log("largeFunction is not defined");
         }
       };
+      // script.src = "largeFunction"
+
+      document.body.appendChild(script);
+
+    
+
+      // Optionally, you can add an onload handler to execute `largeFunction` once the script has loaded
+ 
+
+      if (dataAuthUrl) {
+        script.setAttribute("data-auth-url", dataAuthUrl);
+    
+      } else {
+      
+        script.setAttribute(
+          "data-onauth",
+          "TelegramLoginWidget.dataOnauth(user)"
+        );
+      }
+
+ 
+      script.async = true;
+   
 
       instance.current.appendChild(script);
 
   
 
 
-      setTimeout(() => {
+    //   setTimeout(() => {
       
-        setLoader(true);
-      }, 1000);
+    //     setLoader(true);
+    //   }, 1000);
     }
   }, [
     botName,
