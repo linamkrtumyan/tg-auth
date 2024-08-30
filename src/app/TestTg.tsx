@@ -115,7 +115,7 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
       const script = document.createElement("script");
       script.src = "https://telegram.org/js/telegram-widget.js?14";
       script.setAttribute("data-telegram-login", botName);
-      script.setAttribute("data-size", buttonSize);
+    //   script.setAttribute("data-size", buttonSize);
       if (cornerRadius) {
         script.setAttribute("data-radius", cornerRadius);
       }
