@@ -122,6 +122,8 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
       script.setAttribute("data-request-access", requestAccess);
       script.setAttribute("data-userpic", usePic ? "true" : "false");
       script.setAttribute("data-lang", lang);
+      script.setAttribute("width", "400px");
+
       //   script.crossOrigin = 'anonymous';
 
       script.onload = () => {
