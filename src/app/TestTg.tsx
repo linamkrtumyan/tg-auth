@@ -30,78 +30,9 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
 
   console.log("test");
 
-  //   if (typeof window !== 'undefined') {
-  //     const iframe = window.document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
-  //     console.log(iframe, 'iframe');
-  //       const elmnt = iframe.conte
-  //   console.log(elmnt,'elmnt')
-  // //   if (elmnt) {
-  // //     elmnt.style.backgroundColor = "red";
-  // //   }
-  //   } else {
-  //     console.log('Window is undefined');
-  //   }
-
-  //   const elmnt = iframe?.getElementsByTagName('button')
-  //   console.log(elmnt,'elmnt')
-  //   if (elmnt) {
-  //     elmnt.style.backgroundColor = "red";
-  //   }
-
-  function largeFunction() {
-    // console.log("test largeFunction");
-
-    setTimeout(() => {
 
 
-    if (typeof window !== "undefined") {
-        //   var iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
-        //   const iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
 
-          const iframe = window.document.getElementsByTagName("iframe")[0]
-          console.log(iframe,'iframe1')
-          iframe.width = "500px"
-
-          iframe.onload = () => {
-            const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
-            if (iframeDoc) {
-              // Get all child elements inside the iframe
-              const elements = iframeDoc.body.querySelectorAll('*');
-              
-              // Set the width of all child elements to 500px
-              elements.forEach((element) => {
-                (element as HTMLElement).style.width = '500px';
-              });
-    
-              console.log(elements, 'All child elements resized to 500px');
-            }
-          };
-        // console.log(iframe?.get,'iframe')
-            
-        //   console.log(iframe,'iframe')
-        //   var doc = iframe?.onwaiting()
-        //   console.log(doc,"doc")
-          // reference to form named 'demoForm' in iframe
-        //   var button = doc?.getElementsByTagName('button');
-            // var elmnt = iframe?.
-        //   console.log(button,'button')
-        } else {
-          console.log("Window is undefined");
-        }
-
-    }, 2000)
-
-    if (typeof window !== "undefined") {
-      const iframe = window.document.getElementsByTagName("iframe")[0]
-      iframe.width = "500px"
-      console.log(iframe,'iframe')
-
-    } else {
-      console.log("Window is undefined");
-    }
-    // This is a global function and is a part of window object.
-    // This can be called from anywhere once the file is loaded.
-  }
 
   useEffect(() => {
     if (instance.current) {
@@ -123,24 +54,7 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
       script.setAttribute("data-userpic", usePic ? "true" : "false");
       script.setAttribute("data-lang", lang);
       script.setAttribute("width", "400px");
-
-      //   script.crossOrigin = 'anonymous';
-
-      script.onload = () => {
-        if (typeof largeFunction === "function") {
-          largeFunction();
-        } else {
-          console.log("largeFunction is not defined");
-        }
-      };
-      // script.src = "largeFunction"
-
       document.body.appendChild(script);
-
-    
-
-      // Optionally, you can add an onload handler to execute `largeFunction` once the script has loaded
- 
 
       if (dataAuthUrl) {
         script.setAttribute("data-auth-url", dataAuthUrl);
@@ -152,19 +66,11 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
           "TelegramLoginWidget.dataOnauth(user)"
         );
       }
-
- 
       script.async = true;
-   
-
       instance.current.appendChild(script);
-
-  
-
 
       setTimeout(() => {
         setLoader(true);
-    
       }, 1000);
     }
   }, [
@@ -181,7 +87,7 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
   return (
     <div className="mainclass">
       <div className="tg-main">
-        {loader ? (
+        {/* {loader ? (
           <div className="tg-logo1">
             <img
               style={{ width: "18px", height: "18px" }}
@@ -216,7 +122,7 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
               Loading...
             </p>
           </div>
-        )}
+        )} */}
         <div ref={instance} className={className} />
       </div>
     </div>
