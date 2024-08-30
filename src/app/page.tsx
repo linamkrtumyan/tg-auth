@@ -22,9 +22,13 @@ export default function Home() {
         
       /> */}
 
-      {/* <BotButton/> */}
+      <div style={{display:"flex"}} >
+      <BotButton/>
+      <BotButton/>
+      </div>
 
-      <TelegramLogin/>
+
+      {/* <TelegramLogin/> */}
 
       <Image
             src="https://i.imgur.com/jzU4oUo.jpeg"

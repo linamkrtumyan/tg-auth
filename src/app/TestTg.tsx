@@ -201,7 +201,7 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
                 fontWeight: "bold",
               }}
             >
-              Connect via Telegram 1wwww
+              Connect via Telegram
             </p>
           </div>
         ) : (
