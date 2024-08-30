@@ -5,12 +5,15 @@
 }
 
 .tg-login-button * {
+    position: absolute;
     width: 100%;
   }
 .mainclass {
   z-index: 1000;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
+
 }
 
 .tg-logo1 {

@@ -57,7 +57,7 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
     if (typeof window !== "undefined") {
         //   var iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
           const iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
-        console.log(iframe,'iframe')
+        // console.log(iframe?.get,'iframe')
           if (iframe && iframe.contentWindow && iframe.contentWindow.document) {
             const buttons = iframe.contentWindow.document.getElementsByTagName("button");
             
