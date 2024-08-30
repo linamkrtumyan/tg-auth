@@ -4,7 +4,7 @@
   width: 700px
 }
 
-.tg-login-button > * {
+.tg-login-button * {
     position: absolute;
     width: 700px !important;
     background-color: red !important;
