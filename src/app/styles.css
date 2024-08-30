@@ -4,6 +4,13 @@
   width: 100%
 }
 
+.tgme_widget_login.large button.tgme_widget_login_button {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 9px 170px !important;
+    border-radius: 20px;
+  }
+
 /* .tg-login-button * {
     position: absolute;
     width: 700px !important;
