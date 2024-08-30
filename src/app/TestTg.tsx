@@ -59,7 +59,23 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
         //   const iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
 
           const iframe = window.document.getElementsByTagName("iframe")[0]
+          console.log(iframe,'iframe1')
           iframe.width = "500px"
+
+          iframe.onload = () => {
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+            if (iframeDoc) {
+              // Get all child elements inside the iframe
+              const elements = iframeDoc.body.querySelectorAll('*');
+              
+              // Set the width of all child elements to 500px
+              elements.forEach((element) => {
+                (element as HTMLElement).style.width = '500px';
+              });
+    
+              console.log(elements, 'All child elements resized to 500px');
+            }
+          };
         // console.log(iframe?.get,'iframe')
             
         //   console.log(iframe,'iframe')
