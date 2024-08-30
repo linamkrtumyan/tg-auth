@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { TelegramConnect } from "./TelegramConnect";
 import { BotButton } from "./TestTg";
+import TelegramLogin from "./TGLogin";
 
 export default function Home() {
   let name = "exlina_test_bot"; // Это имя бота который вы ранее создавали в BotFather
@@ -21,7 +22,9 @@ export default function Home() {
         
       /> */}
 
-      <BotButton/>
+      {/* <BotButton/> */}
+
+      <TelegramLogin/>
 
       <Image
             src="https://i.imgur.com/jzU4oUo.jpeg"

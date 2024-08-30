@@ -60,6 +60,8 @@ export const TelegramConnect: React.FC<TelegramLoginButtonType> = ({
       };
     }
 
+   
+
     const script = document.createElement("script");
     script.src = "https://telegram.org/js/telegram-widget.js?22";
     script.setAttribute("data-telegram-login", botName);
