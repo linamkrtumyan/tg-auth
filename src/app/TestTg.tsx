@@ -86,23 +86,10 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
     }, 2000)
 
     if (typeof window !== "undefined") {
-    //   const element = window.document.getElementsByTagName("iframe");
-      var iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
-    //   const el = iframe?.contentWindow?.document
-        // const elmnt = iframe?.contentWindow?.document
-    //   console.log(iframe,'iframe')
+      const iframe = window.document.getElementsByTagName("iframe")[0]
+      iframe.width = "500px"
+      console.log(iframe,'iframe')
 
-        var elmnt = iframe?.contentWindow?.document.getElementsByTagName("html")
-        
-        // elmnt.style.display = "none";
-
-    //   console.log(elmnt,'elmnt')
-
-
-    //   console.log(element, "element");
-      //   if (elmnt) {
-      //     elmnt.style.backgroundColor = "red";
-      //   }
     } else {
       console.log("Window is undefined");
     }
