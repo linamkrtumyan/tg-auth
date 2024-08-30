@@ -55,14 +55,30 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
 
 
     if (typeof window !== "undefined") {
-          var iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
-          console.log(iframe,'iframe')
-          var doc = iframe?.contentDocument
-          console.log(doc,"doc")
+        //   var iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
+          const iframe = document.getElementById("telegram-login-exlina_test_bot") as HTMLIFrameElement | null;
+        console.log(iframe,'iframe')
+          if (iframe && iframe.contentWindow && iframe.contentWindow.document) {
+            const buttons = iframe.contentWindow.document.getElementsByTagName("button");
+            
+            // Example: Log the number of buttons found
+            console.log(`Number of buttons found: ${buttons.length}`);
+            
+            // You can now work with the buttons array
+            // For example, you can log all button text content
+            for (let i = 0; i < buttons.length; i++) {
+              console.log(buttons[i].textContent);
+            }
+          } else {
+            console.log('Iframe or its contentWindow is not available');
+          }         
+        //   console.log(iframe,'iframe')
+        //   var doc = iframe?.onwaiting()
+        //   console.log(doc,"doc")
           // reference to form named 'demoForm' in iframe
-          var button = doc?.getElementsByTagName('button');
+        //   var button = doc?.getElementsByTagName('button');
             // var elmnt = iframe?.
-          console.log(button,'button')
+        //   console.log(button,'button')
         } else {
           console.log("Window is undefined");
         }
