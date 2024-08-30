@@ -1,7 +1,13 @@
 .tg-login-button {
   /* opacity: 0; */
   /* margin-top: -32px; */
-  width: 100%
+  width: 100%;
+  position: absolute; 
+  top: 0;
+}
+
+.tg-main {
+    position: relative;
 }
 
 .tgme_widget_login.large button.tgme_widget_login_button {
@@ -11,13 +17,13 @@
     border-radius: 20px;
   }
 
-/* .tg-login-button * {
-    position: absolute;
+.tg-login-button * {
+    /* position: absolute; */
     width: 700px !important;
-    background-color: red !important;
-    border: 1px solid red;
-    padding: 50px;
-  } */
+    /* background-color: red !important; */
+    /* border: 1px solid red; */
+    /* padding: 50px; */
+  }
 .mainclass {
   z-index: 1000;
   flex-wrap: wrap;

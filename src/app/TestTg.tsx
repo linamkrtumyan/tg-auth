@@ -20,7 +20,7 @@ const TelegramLoginButton: React.FC<TelegramLoginButtonProps> = ({
   className = "",
   cornerRadius,
   requestAccess = "write",
-  usePic = false,
+  usePic = true,
   dataOnauth,
   dataAuthUrl,
   lang = "en",
